@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Habits And Notes</string>
+    <string name="notes">Notes</string>
+    <string name="note_title">Note Title</string>
+    <string name="note_add">Add Note</string>
+    <string name="note_type">Note Type</string>
+    <string name="to_do">To-Do</string>
+    <string name="important">Important</string>
+    <string name="remainder">Remainder</string>
+</resources>
