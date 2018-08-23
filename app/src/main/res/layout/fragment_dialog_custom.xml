@@ -1,105 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center">
-
-    <TextView
-        android:layout_width="125dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/note_add"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+    android:id="@+id/dialog_frag_add"
+    style="@android:style/DeviceDefault.Light.ButtonBar.AlertDialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:scrollbars="vertical"
+    android:soundEffectsEnabled="true">
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="304dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:inputType="text"
+        android:layout_marginTop="20dp"
         android:hint="@string/note_title"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
-
-    <TextView
-        android:id="@+id/txt_note_type"
-        android:textSize="20sp"
-        android:layout_width="131dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/note_type"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="213dp"
-        android:layout_height="189dp"
-        android:layout_marginBottom="120dp"
+        android:id="@+id/type_radio"
+        android:layout_width="211dp"
+        android:layout_height="144dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_note_type"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/editText">
 
         <RadioButton
             android:id="@+id/todo_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/toDo"
-            android:drawableStart="@drawable/toDo"
+            android:drawableLeft="@drawable/todo_btn_icon"
+            android:drawableStart="@drawable/todo_btn_icon"
             android:text="@string/to_do"
             android:textSize="18sp" />
 
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/important"
-            android:drawableStart="@drawable/important"
             android:drawableLeft="@drawable/important"
-            android:textSize="18sp"/>
+            android:drawableStart="@drawable/important"
+            android:text="@string/important"
+            android:textSize="18sp" />
+
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/remainder"
             android:drawableLeft="@drawable/remainder"
+            android:drawableStart="@drawable/remainder"
             android:text="@string/remainder"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/book"
+            android:drawableStart="@drawable/book"
+            android:text="@string/book_notes"
+            android:textSize="18sp" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/add_btn_frag"
+        android:layout_width="120dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancel_btn_frag"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_radio"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <Button
+        android:id="@+id/cancel_btn_frag"
+        android:layout_width="111dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_radio"
+        app:layout_constraintVertical_bias="0.416" />
 
 </android.support.constraint.ConstraintLayout>

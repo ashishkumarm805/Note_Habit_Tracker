@@ -1,10 +1,12 @@
 package com.devhard_make.habitsandnotes;
 
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toolbar;
 
@@ -12,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
      ImageView addImage,settingsImage;
      android.support.v7.widget.Toolbar incTool;
      View toolBar;
+     Button addFrag;
+     FragmentManager fm = getSupportFragmentManager();
     ActionBar ab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +45,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
-
-    private void addNote() {
 
     }
+
+    protected void addNote() {
+
+        customDialogFragment add_note = new customDialogFragment();
+        add_note.show(fm,"Add Note");
+
+
+    }
+
 }
